@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Places } from './places';
+import { Place } from './place';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'list';
+  uselessList: String[] = ["apple", "pineapple", "peach", "cocount", "strawberry"];
+  places: Place[] = Places.places;
 }
