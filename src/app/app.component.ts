@@ -11,4 +11,6 @@ export class AppComponent {
   title = 'list';
   uselessList: String[] = ["apple", "pineapple", "peach", "cocount", "strawberry"];
   places: Place[] = Places.places;
+  selectedPlace: Place = this.places[0];
+  selectedPlaceIndex: number = 0
 }

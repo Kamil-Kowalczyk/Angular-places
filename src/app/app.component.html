@@ -10,3 +10,12 @@
 </div>
 
 <h4>Select a place which details you want to display</h4>
+<select [(ngModel)]="selectedPlaceIndex">
+  <option *ngFor="let place of places, let selectedPlaceIndex = index" value="{{selectedPlaceIndex}}">{{place.getDescription()}}</option>
+</select>
+
+<div >
+  Place in leaderboard: {{places[selectedPlaceIndex].getLeaderboard()}} <br>
+  {{places[selectedPlaceIndex].getDescription()}} <br>
+  <img height="200px" src="{{places[selectedPlaceIndex].getUrl()}}" alt="loading failure"> 
+</div>
