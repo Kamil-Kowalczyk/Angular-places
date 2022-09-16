@@ -14,10 +14,13 @@
   <option *ngFor="let place of places, let selectedPlaceIndex = index" value="{{selectedPlaceIndex}}">{{place.getDescription()}}</option>
 </select>
 
-<div >
-  Place in leaderboard: {{places[selectedPlaceIndex].getLeaderboard()}} <br>
-  {{places[selectedPlaceIndex].getDescription()}} <br>
-  <img height="200px" src="{{places[selectedPlaceIndex].getUrl()}}" alt="loading failure"> 
-</div>
-
 <app-location [selected]="selectedPlaceIndex"></app-location>
+
+<form #formulage="ngForm" (ngSubmit)="onSumbit(formulage)">
+  <select [(ngModel)]="selectedPlaceIndex" name="placeidx">
+    <option *ngFor="let place of places, let selectedPlaceIndex = index" value="{{selectedPlaceIndex}}">
+      {{place.getDescription()}}
+    </option>
+  </select>
+  <button type="submit">Save</button>
+</form>

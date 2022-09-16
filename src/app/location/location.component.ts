@@ -17,4 +17,16 @@ export class LocationComponent implements OnInit {
   @Input() selected!: number;
 
   locations: Place[] = Places.places;
+  visibility: boolean = true;
+
+  public increaseRanking(): void{
+    this.locations[this.selected].setLeaderboard(this.locations[this.selected].getLeaderboard() + 1);
+  }
+  public decreaseRanking(): void{
+    this.locations[this.selected].setLeaderboard(this.locations[this.selected].getLeaderboard() - 1);
+  }
+
+  public changeVisibility(): void{
+    this.visibility = !this.visibility;
+  }
 }

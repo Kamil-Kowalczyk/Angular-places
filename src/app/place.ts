@@ -18,4 +18,8 @@ export class Place{
     public getUrl(): String{
         return this._url;
     }
+
+    public setLeaderboard(value: number): void{
+        this._leaderboard = value;
+    }
 }

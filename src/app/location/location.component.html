@@ -1,6 +1,9 @@
 <h3>Selected location</h3>
 
 <h5>{{locations[selected].getDescription()}}</h5>
-<h6>Place in the leaderboard{{locations[selected].getLeaderboard()}}</h6>
-<button></button>
-<button></button>
+<h6>Place in the leaderboard {{locations[selected].getLeaderboard()}}</h6>
+<img *ngIf="visibility" src="{{locations[selected].getUrl()}}">
+<button type="button" (click)="increaseRanking()">Increase the ranking</button>
+<button type="button" (click)="decreaseRanking()">Decrease the ranking</button>
+<button type="button" (click)="changeVisibility()">Show or Hide</button>
+<input type="checkbox" [(ngModel)]="visibility">
